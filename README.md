@@ -1,0 +1,1 @@
+# moleculer-gds-service-template
