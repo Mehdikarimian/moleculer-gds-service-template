@@ -1,0 +1,20 @@
+{
+    "name": "moleculer-gds-service-template",
+    "version": "0.0.1",
+    "description": "Project template for Moleculer-based gds services",
+    "main": "meta.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/bientehaio/moleculer-gds-service-template.git"
+    },
+    "keywords": [],
+    "author": "Hamed Torbatian <hamed@bienteha.io>",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/bientehaio/moleculer-gds-service-template/issues"
+    },
+    "homepage": "https://github.com/bientehaio/moleculer-gds-service-template#readme"
+  }
