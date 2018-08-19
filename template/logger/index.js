@@ -84,6 +84,9 @@ module.exports = (bindings, level) => {
     },
     fatal: (...args) => {
       logger.fatal({ ...args, ...bindings }, args[0])
+    },
+    close: () => {
+      client.destroy()
     }
   }
 }
