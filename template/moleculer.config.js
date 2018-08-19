@@ -84,5 +84,7 @@ module.exports = {
   started (broker) {},
 
   // Called after broker stopped.
-  stopped (broker) {}
+  stopped (broker) {
+    broker.logger.close()
+  }
 }
