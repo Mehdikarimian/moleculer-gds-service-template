@@ -1,47 +1,47 @@
 {
-    "name": "{{projectName}}",
-    "version": "2.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "dev": "moleculer-runner --repl --hot services",
-      "start": "moleculer-runner",
-      "ci": "jest --watch",
-      "test": "jest --coverage",
-      "lint": "eslint services"
-    },
-    "author": "Bienteha Dev Team <dev@bienteha.io>",
-    "devDependencies": {
-      "eslint": "^5.0.1",
-      "eslint-config-standard": "^11.0.0",
-      "eslint-plugin-import": "^2.13.0",
-      "eslint-plugin-node": "^6.0.1",
-      "eslint-plugin-promise": "^3.8.0",
-      "eslint-plugin-standard": "^3.1.0",
-      "jest": "^23.3.0",
-      "jest-cli": "^23.3.0",
-      "moleculer-repl": "^0.4.0"
-    },
-    "dependencies": {
-      "fast-safe-stringify": "^2.0.4",
-      "ioredis": "^3.2.2",
-      "moleculer": "^0.13.0",
-      "mongodb": "^3.1.3",
-      "nats": "^1.0.0",
-      "pino": "^5.1.1",
-      "pino-pretty": "^2.0.1",
-      "tunebox": "0.0.2"
-    },
-    "engines": {
-      "node": ">= 8.x.x"
-    },
-    "jest": {
-      "coverageDirectory": "../coverage",
-      "testEnvironment": "node",
-      "rootDir": "./services",
-      "roots": [
-        "../test"
-      ]
-    }
+  "name": "{{projectName}}",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "moleculer-runner --repl --hot services",
+    "start": "moleculer-runner",
+    "ci": "jest --watch",
+    "test": "jest --coverage",
+    "lint": "eslint services"
+  },
+  "author": "Bienteha Dev Team <dev@bienteha.io>",
+  "devDependencies": {
+    "eslint": "^5.0.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "jest": "^23.3.0",
+    "jest-cli": "^23.3.0",
+    "moleculer-repl": "^0.4.0"
+  },
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "fast-safe-stringify": "^2.0.4",
+    "ioredis": "^3.2.2",
+    "moleculer": "^0.13.0",
+    "mongodb": "^3.1.3",
+    "nats": "^1.0.0",
+    "pino": "^5.1.1",
+    "pino-pretty": "^2.0.1",
+    "tunebox": "0.0.2"
+  },
+  "engines": {
+    "node": ">= 8.x.x"
+  },
+  "jest": {
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "rootDir": "./services",
+    "roots": [
+      "../test"
+    ]
   }
-  
+}

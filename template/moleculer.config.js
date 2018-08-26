@@ -10,12 +10,14 @@ module.exports = {
   logger: bindings => logger(bindings, 'info'),
   logLevel: 'info',
 
-  transporter: 'NATS',
+  transporter: `${tunebox.config.nats.host}:${tunebox.config.nats.port}`,
 
   cacher: {
     type: 'Redis',
     options: {
-      ttl: 5
+      ttl: 5,
+      host: `${tunebox.config.redis.host}`,
+      port: `${tunebox.config.redis.port}`
     }
   },
 
