@@ -1,0 +1,49 @@
+pipeline {
+  agent none
+  stages {
+    stage('Start and Test') {
+      agent {
+        docker {
+          image 'node:alpine'
+          args '--link redis:redis --link nats:nats --link mongo:mongo'
+        }
+      }
+      post {
+        always {
+          step([$class: 'CoberturaPublisher', coberturaReportFile: 'coverage/cobertura-coverage.xml'])
+        }
+      }
+      steps {
+        script {
+          sh 'npm install'
+          sh 'npm run test'
+        }
+
+      }
+    }
+    stage('Build') {
+      agent any
+      steps {
+        script {
+          sh '/usr/local/bin/docker-compose up --build -d'
+          sh '/usr/local/bin/docker-compose rm -s -f'
+        }
+
+      }
+    }
+    stage('Deploy') {
+      agent any
+      when {
+        expression {
+          currentBuild.result == null || currentBuild.result == 'SUCCESS'
+        }
+
+      }
+      steps {
+        script {
+          sh '/root/gds.bash'
+        }
+      }
+    }
+  }
+}

@@ -1,29 +1,18 @@
 require('dotenv').config()
 const tunebox = require('tunebox')
-tunebox.init(require('./config'))
-
-const logger = require('./logger')
+tunebox.init(require('.'))
+const pino = require('pino')({ prettyPrint: true, level: 'info' })
 
 module.exports = {
   namespace: 'bienteha',
   nodeID: null,
 
-  logger: bindings => logger(bindings, 'info'),
+  logger: bindings => pino.child(bindings),
   logLevel: 'info',
 
   transporter: `${tunebox.config.nats.host}:${tunebox.config.nats.port}`,
 
-  cacher: {
-    type: 'Redis',
-    options: {
-      ttl: 5,
-      host: `${tunebox.config.redis.host}`,
-      port: `${tunebox.config.redis.port}`
-    }
-  },
-
   serializer: 'JSON',
-
   requestTimeout: 50 * 10000,
   retryPolicy: {
     enabled: false,
@@ -87,7 +76,5 @@ module.exports = {
   started (broker) {},
 
   // Called after broker stopped.
-  stopped (broker) {
-    broker.logger.close()
-  }
+  stopped (broker) {}
 }

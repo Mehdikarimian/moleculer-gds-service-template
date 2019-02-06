@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "moleculer-runner --repl --hot services",
-    "start": "moleculer-runner",
+    "dev": "moleculer-runner --config ./config/moleculer.config.js --repl --hot ./services/dataset.service.js",
+    "start": "moleculer-runner --config ./config/moleculer.config.js ./services/dataset.service.js  --instances 10",
     "ci": "jest --watch",
-    "test": "jest --coverage",
-    "lint": "eslint services"
+    "test": "jest --coverage --detectOpenHandles",
+    "lint": "eslint services",
+    "seed": "node seeds"
   },
   "author": "Bienteha Dev Team <dev@bienteha.io>",
   "devDependencies": {

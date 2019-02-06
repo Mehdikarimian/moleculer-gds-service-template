@@ -15,5 +15,9 @@ module.exports = {
   redis: {
     host: process.env.CACHER_HOST || 'http://127.0.0.1',
     port: process.env.CACHER_PORT || 6379
+  },
+  loggerConfig: {
+    mongoActions: [],
+    pinoActions: []
   }
 }
